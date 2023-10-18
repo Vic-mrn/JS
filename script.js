@@ -4,52 +4,63 @@ var frases = ["Nombre del empleado", "Departamento del empleado", "Sueldo diario
 //Gurada los datos recibidos
 var datos = []
 
-//Ciclo para los prompt
-// for (var x = 0; x < 5; x++) {
-//     datos[x] = prompt(frases[x])
-// }
-
-//Matriz que almacena los datos de la tabla
-//var guardarDatos = [[]];
-
 //Funcion obtenerDatos
-function obtenerDatos() {
-    var x = document.getElementById("nombre").value;
-}
 
-function crearTabla() {
-    var table = document.createElement("table");
-    for (var i = 0; i < 2; i++) {
-        var row = document.createElement("tr");
 
-        for (var j = 0; j < 8; j++) {
-            var cell = document.createElement("td");
-            cell.className = "segment"; // Agregar la clase 'segment' a todas las celdas
-            row.appendChild(cell);
-        }
-        table.appendChild(row);
-    }
-    document.body.appendChild(table);
-}
+var encabezados = ["Nombre", "Depto.", "Sueldo diario", "Antiguedad", "Dias trabajados", "Subtotal", "Bono", "Total"];
+var table = document.createElement("table");
 
-function crearTabla2() {
-    var table = document.createElement("table");
+function crearEncabezado() {
+
     for (var i = 0; i < 1; i++) {
         var row = document.createElement("tr");
 
         for (var j = 0; j < 8; j++) {
             var cell = document.createElement("td");
-            cell.className = "segment"; // Agregar la clase 'segment' a todas las celdas
+            cell.className = "segmento"; // Agregar la clase 'segment' a todas las celdas
             row.appendChild(cell);
+            cell.textContent = encabezados[j];
         }
         table.appendChild(row);
     }
     document.body.appendChild(table);
 }
 
-crearTabla();
+function empleado() {
+    //Manejamos los valores
+    datos[0] = document.getElementById("nombre").value;
+    datos[1] = document.getElementById("depto").value;
+    datos[2] = document.getElementById("sueldo").value;
+    datos[3] = document.getElementById("ant").value;
+    datos[4] = document.getElementById("dias").value;
 
-//var encabezados = ["Nombre", "Depto.", "Sueldo diario", "Antiguedad", "Dias trabajados", "Subtotal", "Bono", "Total"];
+    datos[5] = datos[4] * datos[2];
+
+    if (datos[3] > 15) {
+        datos[6] = datos[5] * 0.30;
+    } else {
+        datos[6] = datos[5] * 0.15;
+    }
+
+    datos[7] = datos[5] + datos[6];
+
+
+    for (var i = 0; i < 1; i++) {
+        var row = document.createElement("tr");
+
+        for (var j = 0; j < 8; j++) {
+            var cell = document.createElement("td");
+            cell.className = "segmento"; // Agregar la clase 'segment' a todas las celdas
+            row.appendChild(cell);
+            cell.textContent = datos[j];
+        }
+        table.appendChild(row);
+    }
+}
+
+crearEncabezado();
+
+
 
 
 

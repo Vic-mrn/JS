@@ -15,7 +15,7 @@
         }
 
         /* Estilo para las celdas */
-        .segment {
+        .segmento {
             width: 50px;
             height: 30px;
             background-color: greenyellow;
@@ -27,11 +27,79 @@
 <body>
     <center>
         <h1 style="font-family: consolas;">Tabla empleados</h1>
-        <input type="text" id="nombre">
-        <button onclick="crearTabla2()">Agregar</button>
+
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="depto" placeholder="Departamento">
+        <input type="text" id="sueldo" placeholder="Sueldo diario">
+        <input type="text" id="ant" placeholder="Antiguedad">
+        <input type="text" id="dias" placeholder="Dias laborados">
+
+        <button onclick="empleado()">Agregar</button>
+
+
     </center>
     <br>
-    <script src="script.js"></script>
+    <script>
+        //Valores para el prompt
+        var frases = ["Nombre del empleado", "Departamento del empleado", "Sueldo diario", "Antiguedad", "Dias trabajados"]
+        //Gurada los datos recibidos
+        var datos = []
+
+        //Funcion obtenerDatos
+
+
+        var encabezados = ["Nombre", "Depto.", "Sueldo diario", "Antiguedad", "Dias trabajados", "Subtotal", "Bono", "Total"];
+        var table = document.createElement("table");
+
+        function crearEncabezado() {
+
+            for (var i = 0; i < 1; i++) {
+                var row = document.createElement("tr");
+
+                for (var j = 0; j < 8; j++) {
+                    var cell = document.createElement("td");
+                    cell.className = "segmento"; // Agregar la clase 'segment' a todas las celdas
+                    row.appendChild(cell);
+                    cell.textContent = encabezados[j];
+                }
+                table.appendChild(row);
+            }
+            document.body.appendChild(table);
+        }
+
+        function empleado() {
+            //Manejamos los valores
+            datos[0] = document.getElementById("nombre").value;
+            datos[1] = document.getElementById("depto").value;
+            datos[2] = document.getElementById("sueldo").value;
+            datos[3] = document.getElementById("ant").value;
+            datos[4] = document.getElementById("dias").value;
+
+            datos[5] = datos[4] * datos[2];
+
+            if (datos[3] > 15) {
+                datos[6] = datos[5] * 0.30;
+            } else {
+                datos[6] = datos[5] * 0.15;
+            }
+
+            datos[7] = datos[5] + datos[6];
+
+
+            for (var i = 0; i < 1; i++) {
+                var row = document.createElement("tr");
+
+                for (var j = 0; j < 8; j++) {
+                    var cell = document.createElement("td");
+                    cell.className = "segmento"; // Agregar la clase 'segment' a todas las celdas
+                    row.appendChild(cell);
+                    cell.textContent = datos[j];
+                }
+                table.appendChild(row);
+            }
+        }
+
+        crearEncabezado();</script>
 </body>
 
 </html>
