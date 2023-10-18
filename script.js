@@ -1,4 +1,3 @@
-
 //Valores para el prompt
 var frases = ["Nombre del empleado", "Departamento del empleado", "Sueldo diario", "Antiguedad", "Dias trabajados"]
 //Gurada los datos recibidos
@@ -58,10 +57,12 @@ function empleado() {
     }
 }
 
+function borrar() {
+    document.getElementById("nombre").value = "";
+    document.getElementById("depto").value = "";
+    document.getElementById("sueldo").value = "";
+    document.getElementById("ant").value = "";
+    document.getElementById("dias").value = "";
+}
+
 crearEncabezado();
-
-
-
-
-
-
