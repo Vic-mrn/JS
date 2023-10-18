@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="estilo.css">
+    <title>Articulos</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            background-color: wheat;
+            width: 75%;
+        }
+
+        th,
+        td {
+            border: solid 1px black;
+            padding: 8px;
+            font-family: consolas;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <h1 style="font-family: consolas;">Tabla Articulos</h1>
+    </center>
+    <br>
+
+    <script>
+
+        //Recibe los datos
+        articulo = prompt("Nombre del articulo")
+        cantidad = prompt("Cantidad de articulos")
+        precio = prompt("Precio del articulo")
+
+        subtotal = cantidad * precio
+
+        if (cantidad >= 5) {
+            desc = subtotal * 0.25
+            total = subtotal - desc
+        }
+        else {
+            total = subtotal
+        }
+
+
+        //Crea la tabla
+        var encabezados = ["Articulo", "Cantidad", "Precio", "Subtotal", "Descuento", "Total"];
+
+
+        var table = document.createElement("table");
+
+        for (var i = 0; i < 2; i++) {
+            var row = document.createElement("tr");
+
+            for (var j = 0; j < 6; j++) {
+                var cell = document.createElement("td");
+
+                if (i == 0) {
+                    cell.className = "segmento header"; // Agregar la clase 'segment' a todas las celdas
+                    row.appendChild(cell);
+                    cell.textContent = encabezados[j];
+                } else {
+                    cell.className = "segmento"; // Agregar la clase 'segment' a todas las celdas
+                    row.appendChild(cell);
+                }
+            }
+            table.appendChild(row);
+        }
+
+        table.rows[1].cells[0].textContent = articulo;
+        table.rows[1].cells[1].textContent = cantidad;
+        table.rows[1].cells[2].textContent = precio;
+        table.rows[1].cells[3].textContent = subtotal;
+        table.rows[1].cells[4].textContent = desc;
+        table.rows[1].cells[5].textContent = total;
+
+        document.body.appendChild(table);  
+    </script>
+</body>
+
+</html>
