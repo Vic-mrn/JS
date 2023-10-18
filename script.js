@@ -1,24 +1,56 @@
-// Crear una tabla de 8 segmentos
-var table = document.createElement("table");
-var encabezados = ["Nombre", "Depto.", "Sueldo diario", "Antiguedad", "Dias trabajados", "Subtotal", "Bono", "Total"];
 
-for (var i = 0; i < 2; i++) {
-    var row = document.createElement("tr");
+//Valores para el prompt
+var frases = ["Nombre del empleado", "Departamento del empleado", "Sueldo diario", "Antiguedad", "Dias trabajados"]
+//Gurada los datos recibidos
+var datos = []
 
-    for (var j = 0; j < 8; j++) {
-        var cell = document.createElement("td");
-        cell.className = "segment"; // Agregar la clase 'segment' a todas las celdas
-        row.appendChild(cell);
-        if (i==0) {
-            cell.textContent = encabezados[j];
-        }
-    }
+//Ciclo para los prompt
+// for (var x = 0; x < 5; x++) {
+//     datos[x] = prompt(frases[x])
+// }
 
-    table.appendChild(row);
-    
+//Matriz que almacena los datos de la tabla
+//var guardarDatos = [[]];
 
+//Funcion obtenerDatos
+function obtenerDatos() {
+    var x = document.getElementById("nombre").value;
 }
 
-table.rows[1].cells[2].textContent = "2";
-// Agregar la tabla al cuerpo del documento
-document.body.appendChild(table);
+function crearTabla() {
+    var table = document.createElement("table");
+    for (var i = 0; i < 2; i++) {
+        var row = document.createElement("tr");
+
+        for (var j = 0; j < 8; j++) {
+            var cell = document.createElement("td");
+            cell.className = "segment"; // Agregar la clase 'segment' a todas las celdas
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+    document.body.appendChild(table);
+}
+
+function crearTabla2() {
+    var table = document.createElement("table");
+    for (var i = 0; i < 1; i++) {
+        var row = document.createElement("tr");
+
+        for (var j = 0; j < 8; j++) {
+            var cell = document.createElement("td");
+            cell.className = "segment"; // Agregar la clase 'segment' a todas las celdas
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+    document.body.appendChild(table);
+}
+
+crearTabla();
+
+//var encabezados = ["Nombre", "Depto.", "Sueldo diario", "Antiguedad", "Dias trabajados", "Subtotal", "Bono", "Total"];
+
+
+
+

@@ -7,11 +7,6 @@
     <link rel="JavaScript" href="script.js">
 
     <style>
-        .fuente {
-            font-size: 15px;
-            font-family: consolas;
-        }
-
         /* Estilo para la tabla */
         table {
             border-radius: 20px;
@@ -31,58 +26,12 @@
 
 <body>
     <center>
-        <h1 style="margin: auto; font-family: consolas;">Tabla empleados</h1>
+        <h1 style="font-family: consolas;">Tabla empleados</h1>
+        <input type="text" id="nombre">
+        <button onclick="crearTabla2()">Agregar</button>
     </center>
     <br>
-    <script>
-
-        //Valores para el prompt
-        var frases = ["Nombre del empleado", "Departamento del empleado", "Sueldo diario", "Antiguedad", "Dias trabajados"]
-        //Gurada los datos recibidos
-        var datos = []
-
-        //Ciclo para los prompt
-        for (var x = 0; x < 5; x++) {
-            datos[x] = prompt(frases[x])
-        }
-
-        //Subtotal
-        datos[5] = datos[2] * datos[4]
-        //bono
-        if (datos[3] > 15) {
-            datos[6] = datos[5] * 0.30
-        }
-        else {
-            datos[6] = datos[5] * 0.30
-        }
-        //Total
-        datos[7] = datos[6] + datos[5]
-
-        // Crear una tabla de 8 segmentos
-        var table = document.createElement("table");
-
-        var encabezados = ["Nombre", "Depto.", "Sueldo diario", "Antiguedad", "Dias trabajados", "Subtotal", "Bono", "Total"];
-
-        for (var i = 0; i < 2; i++) {
-            var row = document.createElement("tr");
-
-            for (var j = 0; j < 8; j++) {
-                var cell = document.createElement("td");
-                cell.className = "segment fuente"; // Agregar la clase 'segment' a todas las celdas
-                row.appendChild(cell);
-                if (i == 0) {
-                    cell.textContent = encabezados[j];
-                }
-                if (i == 1) {
-                    cell.textContent = datos[j];
-                }
-            }
-            table.appendChild(row);
-        }
-
-        // Agregar la tabla al cuerpo del documento
-        document.body.appendChild(table);
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
