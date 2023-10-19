@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        // Funcion 1
+        function area(a, b) {
+            resultado = (a * b) / 2
+            document.write("El area es: " + resultado)
+        }
+
+        area(10, 2)
+        //Funcion 2
+        document.write("<br>")
+
+        function saluda(texto) {
+            document.write("Hola " + texto)
+
+        }
+
+        saluda("Cola")
+
+
+        //funcion 3
+        function texto(text, color, size, align) {
+
+            var textcolor
+            switch (color) {
+                case 1: textcolor = "#ff5733";
+                    break
+                case 2: textcolor = "#3386ff";
+                    break
+                case 3: textcolor = "#e9ff33 ";
+                    break
+
+            }
+
+            var alineado
+            
+                if(align == "c" ) { alinedado = "center"  }                
+                else if(align == "i" ) { alinedado = "left"  }                
+                else if(align == "d" ) { alinedado = "rigth"  }
+
+
+        
+            document.write("<h"+size+" style='color: " + textcolor + "; text-align: "+alineado+"'>" + text + "</h"+size+">")
+        }
+
+        texto("Ana mi amor", 1, 1, "c")
+
+    </script>
+
+
+
+</body>
+
+</html>
