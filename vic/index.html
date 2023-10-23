@@ -10,6 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
     <!-- Titulo del documento     -->
     <title>Ejemplo funciones</title>
@@ -162,7 +163,7 @@
                 <div class="card-footer text-body-secondary ">
                     <div class="card-body">
                         <h5 class="card-title">Resultados</h5>
-                        <script>
+                        <script src="script.js">
                             function saludo(nombre) {
                                 document.write("<h1>Holaaaa " + nombre + "</h1><br>")
                             }
@@ -271,7 +272,7 @@
                             </div>
 
                             <div class="d-grid">
-                                <button class="btn btn-primary btn-lg" id="Boton" onclick="">Ver
+                                <button class="btn btn-primary btn-lg" onclick="textoConCSS">Ver
                                     resultado</button>
                             </div>
 
@@ -280,16 +281,16 @@
                     </blockquote>
                 </div>
 
-
-
                 <script>
 
-                    var select = document.getElementById('posicion');
-                    var pos = select.options[select.selectedIndex].value;
+                    function textoConCSS() {
+                        var select = "";
+                        var pos = "";
+                        select = document.getElementById('posicion');
+                        pos = select.options[select.selectedIndex].value;
+                        document.write("<h1 class='" + pos + "'>cola " + pos + "</h1>");
+                    }
 
-                    document.write("<p class='" + pos + "'>cola " + pos + "</p>")
-
-                    
                     textoConCSS();
 
                 </script>
