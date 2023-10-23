@@ -4,12 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+    <!-- Titulo del documento     -->
     <title>Ejemplo funciones</title>
+
+    <!-- Estilos para la funcion con css -->
+    <style>
+        /* Importar las fuentes de google fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital@1&family=Pacifico&family=Playfair+Display:ital@1&display=swap');
+
+        /* Color */
+        .rojo {
+            color: #ff4c4c;
+        }
+
+        .azul {
+            color: #4c94ff;
+        }
+
+        .verde {
+            color: #4dcf63;
+        }
+
+        .amarillo {
+            color: #edff4c;
+        }
+
+        .negro {
+            color: #000000;
+        }
+
+        /* Fuentes */
+        .f1 {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .f2 {
+            font-family: 'Pacifico', cursive;
+        }
+
+        .f3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Posicion */
+        .centrado {
+            text-align: center;
+        }
+
+        .izquierda {
+            text-align: left;
+        }
+
+        .derecha {
+            text-align: right;
+        }
+    </style>
+
 
 </head>
 
@@ -23,6 +80,7 @@
                 </a>
             </header>
 
+            <!-- Funcion suma -->
             <div class="card p-1 mb-4 bg-body-tertiary rounded-3 border">
                 <div class="card-header h5">
                     Función suma
@@ -54,6 +112,8 @@
                 </div>
             </div>
 
+
+            <!-- Funcion area de un triangulo -->
             <div class="card p-1 mb-4 bg-body-tertiary rounded-3 border">
                 <div class="card-header">
                     Función suma
@@ -84,47 +144,160 @@
                 </div>
             </div>
 
-            <div class="row align-items-md-stretch">
-                <div class="col-md-6">
-                    <div class="card-header">
-                        Función suma
-                    </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <pre>
-                                    <code class="text-muted">
-                                        area(10, 2);
-                                        area(15, 4);
-                                </code>
-                                    </pre>
-                        </blockquote>
-                    </div>
-                    <div class="card-footer text-body-secondary ">
-                        <div class="card-body">
-                            <h5 class="card-title">Resultados</h5>
-                            <script>
-                                function area(a, b) {
-                                    resultado = (a * b) / 2
-                                    document.write("El area es: " + resultado + "<br>")
-                                }
-
-                                area(10, 2);
-                                area(15, 4);
-                            </script>
-                        </div>
-                    </div>
+            <!-- Funcion saludo -->
+            <div class="card p-1 mb-4 bg-body-tertiary rounded-3 border">
+                <div class="card-header">
+                    Función saludar persona
                 </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                        <h2>Add borders</h2>
-                        <p>Or, keep it light and add a border for some added definition to the boundaries of your
-                            content. Be sure to look under the hood at the source HTML here as we've adjusted the
-                            alignment and sizing of both column's content for equal-height.</p>
-                        <button class="btn btn-outline-secondary" type="button">Example button</button>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <pre>
+                                <code class="text-muted">
+                                    saludo("Victor");
+                                    saludo("Ana");
+                            </code>
+                                </pre>
+                    </blockquote>
+                </div>
+                <div class="card-footer text-body-secondary ">
+                    <div class="card-body">
+                        <h5 class="card-title">Resultados</h5>
+                        <script>
+                            function saludo(nombre) {
+                                document.write("<h1>Holaaaa " + nombre + "</h1><br>")
+                            }
+
+                            saludo("Victor");
+                            saludo("Ana");
+                        </script>
                     </div>
                 </div>
             </div>
 
+            <!-- Texto personalizado (no css) -->
+            <div class="card p-1 mb-4 bg-body-tertiary rounded-3 border">
+                <div class="card-header">
+                    Texto personalizado (no css)
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <pre>
+                                <code class="text-muted">
+                                    texto("Hola a la derecha", 1, 1, "d")
+                                    texto("Hola al centro", 1, 1, "c")
+                                    texto("Hola a la izquierda", 1, 1, "i")
+                            </code>
+                                </pre>
+                    </blockquote>
+                </div>
+                <div class="card-footer text-body-secondary ">
+                    <div class="card-body">
+                        <h5 class="card-title">Resultados</h5>
+                        <script>
+                            function texto(text, color, size, align) {
+
+                                var textcolor
+                                switch (color) {
+                                    case 1: textcolor = "#3386ff";
+                                        break
+                                    case 2: textcolor = "#FF3333";
+                                        break
+                                    case 3: textcolor = "#ff5733";
+                                        break
+                                    case 4: textcolor = "#AFAFAF";
+                                        break
+                                }
+
+                                var alineado
+
+                                if (align == 'c') { alineado = "center" }
+                                else if (align == "i") { alineado = "left" }
+                                else if (align == "d") { alineado = "right" }
+
+
+
+                                document.write("<h" + size + " style='color: " + textcolor + "; text-align: " + alineado + ";'>" + text + "</h" + size + ">")
+                            }
+
+                            texto("Hola a la derecha", 1, 1, "d")
+                            texto("Hola al centro", 2, 2, "c")
+                            texto("Hola a la izquierda", 3, 3, "i")
+                            texto("Ana mi amor", 4, 4, "c")
+                        </script>
+                        <h1 style="text-align: center;">Hola</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto personalizado (css) -->
+            <div class="card p-1 mb-4 bg-body-tertiary rounded-3 border">
+                <div class="card-header">
+                    Texto personalizado (css)
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <div class="container px-5 my-5">
+                            <form id="Form">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="nombre" type="text" placeholder="Nombre"
+                                        data-sb-validations="" />
+                                    <label for="nombre" style="font-size: 18px;">Nombre</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="color" aria-label="Color">
+                                        <option value="Rojo">Rojo</option>
+                                        <option value="Azul">Azul</option>
+                                        <option value="Verde">Verde</option>
+                                        <option value="Amarillo">Amarillo</option>
+                                        <option value="Negro">Negro</option>
+                                    </select>
+                                    <label for="color" style="font-size: 18px;">Color</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="fuente" aria-label="Fuente">
+                                        <option value="Exo 2">Exo 2</option>
+                                        <option value="Pacifico">Pacifico</option>
+                                        <option value="Playfair Display">Playfair Display</option>
+                                    </select>
+                                    <label for="fuente" style="font-size: 18px;">Fuente</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select class="form-select" id="posicion" aria-label="Posición">
+                                        <option value="centrado">Centrado</option>
+                                        <option value="izquierda">Izquierda</option>
+                                        <option value="derecha">Derecha</option>
+                                    </select>
+                                    <label for="posicion" style="font-size: 18px;">Posición</label>
+                                </div>
+
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="Boton">Ver
+                                        resultado</button>
+                                </div>
+                            </form>
+                        </div>
+                        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+                    </blockquote>
+                </div>
+
+
+
+                <script>
+                    function textoConCSS() {
+
+                        var select = document.getElementById('posicion');
+                        var pos = select.options[select.selectedIndex].value;
+
+
+                        document.write("<p class='" + pos + "'>cola " + pos + "</p> <br>")
+
+                    }
+
+                    
+                </script>
+                <h1 style="text-align: center;">Hola</h1>
+
+            </div>
             <footer class="pt-3 mt-4 text-body-secondary border-top">
                 &copy; 2023
             </footer>
