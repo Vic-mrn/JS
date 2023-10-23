@@ -237,44 +237,44 @@
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
                         <div class="container px-5 my-5">
-                            <form id="Form">
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="nombre" type="text" placeholder="Nombre"
-                                        data-sb-validations="" />
-                                    <label for="nombre" style="font-size: 18px;">Nombre</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="color" aria-label="Color">
-                                        <option value="Rojo">Rojo</option>
-                                        <option value="Azul">Azul</option>
-                                        <option value="Verde">Verde</option>
-                                        <option value="Amarillo">Amarillo</option>
-                                        <option value="Negro">Negro</option>
-                                    </select>
-                                    <label for="color" style="font-size: 18px;">Color</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="fuente" aria-label="Fuente">
-                                        <option value="Exo 2">Exo 2</option>
-                                        <option value="Pacifico">Pacifico</option>
-                                        <option value="Playfair Display">Playfair Display</option>
-                                    </select>
-                                    <label for="fuente" style="font-size: 18px;">Fuente</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="posicion" aria-label="Posición">
-                                        <option value="centrado">Centrado</option>
-                                        <option value="izquierda">Izquierda</option>
-                                        <option value="derecha">Derecha</option>
-                                    </select>
-                                    <label for="posicion" style="font-size: 18px;">Posición</label>
-                                </div>
 
-                                <div class="d-grid">
-                                    <button class="btn btn-primary btn-lg" id="Boton">Ver
-                                        resultado</button>
-                                </div>
-                            </form>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="nombre" type="text" placeholder="Nombre"
+                                    data-sb-validations="" />
+                                <label for="nombre" style="font-size: 18px;">Nombre</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="color" aria-label="Color">
+                                    <option value="Rojo">Rojo</option>
+                                    <option value="Azul">Azul</option>
+                                    <option value="Verde">Verde</option>
+                                    <option value="Amarillo">Amarillo</option>
+                                    <option value="Negro">Negro</option>
+                                </select>
+                                <label for="color" style="font-size: 18px;">Color</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="fuente" aria-label="Fuente">
+                                    <option value="Exo 2">Exo 2</option>
+                                    <option value="Pacifico">Pacifico</option>
+                                    <option value="Playfair Display">Playfair Display</option>
+                                </select>
+                                <label for="fuente" style="font-size: 18px;">Fuente</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="posicion" aria-label="Posición">
+                                    <option value="centrado">Centrado</option>
+                                    <option value="izquierda">Izquierda</option>
+                                    <option value="derecha">Derecha</option>
+                                </select>
+                                <label for="posicion" style="font-size: 18px;">Posición</label>
+                            </div>
+
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" id="Boton" onclick="">Ver
+                                    resultado</button>
+                            </div>
+
                         </div>
                         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
                     </blockquote>
@@ -283,19 +283,17 @@
 
 
                 <script>
-                    function textoConCSS() {
 
-                        var select = document.getElementById('posicion');
-                        var pos = select.options[select.selectedIndex].value;
+                    var select = document.getElementById('posicion');
+                    var pos = select.options[select.selectedIndex].value;
 
-
-                        document.write("<p class='" + pos + "'>cola " + pos + "</p> <br>")
-
-                    }
+                    document.write("<p class='" + pos + "'>cola " + pos + "</p>")
 
                     
+                    textoConCSS();
+
                 </script>
-                <h1 style="text-align: center;">Hola</h1>
+
 
             </div>
             <footer class="pt-3 mt-4 text-body-secondary border-top">
