@@ -19,7 +19,9 @@
     <style>
         /* Importar las fuentes de google fonts */
         @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital@1&family=Pacifico&family=Playfair+Display:ital@1&display=swap');
-
+        :root {
+            --fs:20px
+        }
         /* Color */
         .rojo {
             color: #ff4c4c;
@@ -35,6 +37,10 @@
 
         .amarillo {
             color: #edff4c;
+        }
+
+        .fuente {
+            font-size: calc(var(--fs)*1px);
         }
 
         .negro {
@@ -116,8 +122,8 @@
 
             <!-- Funcion area de un triangulo -->
             <div class="card p-1 mb-4 bg-body-tertiary rounded-3 border">
-                <div class="card-header">
-                    Función suma
+                <div class="card-header h5">
+                    Función area de un triangulo
                 </div>
                 <div class="card-body">
                     <blockquote class="blockquote mb-0">
@@ -135,7 +141,7 @@
                         <script>
                             function area(a, b) {
                                 resultado = (a * b) / 2
-                                document.write("El area es: " + resultado + "<br>")
+                                document.write("<h3>El area es: " + resultado + "<h3><br>")
                             }
 
                             area(10, 2);
@@ -147,7 +153,7 @@
 
             <!-- Funcion saludo -->
             <div class="card p-1 mb-4 bg-body-tertiary rounded-3 border">
-                <div class="card-header">
+                <div class="card-header h5">
                     Función saludar persona
                 </div>
                 <div class="card-body">
@@ -163,9 +169,9 @@
                 <div class="card-footer text-body-secondary ">
                     <div class="card-body">
                         <h5 class="card-title">Resultados</h5>
-                        <script src="script.js">
+                        <script>
                             function saludo(nombre) {
-                                document.write("<h1>Holaaaa " + nombre + "</h1><br>")
+                                document.write("<h3>Holaaaa " + nombre + "</h3><br>")
                             }
 
                             saludo("Victor");
@@ -246,19 +252,23 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="color" aria-label="Color">
-                                    <option value="Rojo">Rojo</option>
-                                    <option value="Azul">Azul</option>
-                                    <option value="Verde">Verde</option>
-                                    <option value="Amarillo">Amarillo</option>
-                                    <option value="Negro">Negro</option>
+                                    <option value="rojo">Rojo</option>
+                                    <option value="azul">Azul</option>
+                                    <option value="verde">Verde</option>
+                                    <option value="amarillo">Amarillo</option>
+                                    <option value="negro">Negro</option>
                                 </select>
                                 <label for="color" style="font-size: 18px;">Color</label>
                             </div>
+                            <div class="form-floating mb-3 py-5">
+                                <label for="customRange3" class="form-label" id="textoSize" style="font-size: 18px;">0</label>
+                                <input type="range" class="form-range" min="10" max="100" step="10" id="size">
+                              </div>
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="fuente" aria-label="Fuente">
-                                    <option value="Exo 2">Exo 2</option>
-                                    <option value="Pacifico">Pacifico</option>
-                                    <option value="Playfair Display">Playfair Display</option>
+                                    <option value="f1">Exo 2</option>
+                                    <option value="f2">Pacifico</option>
+                                    <option value="f3">Playfair Display</option>
                                 </select>
                                 <label for="fuente" style="font-size: 18px;">Fuente</label>
                             </div>
@@ -271,27 +281,47 @@
                                 <label for="posicion" style="font-size: 18px;">Posición</label>
                             </div>
 
-                            <div class="d-grid">
-                                <button class="btn btn-primary btn-lg" onclick="textoConCSS">Ver
+                            <div class="d-grid mb-3">
+                                <button class="btn btn-primary btn-lg" onclick="textoConCSS()">Ver
                                     resultado</button>
                             </div>
+                            <hr>
+                            
 
                         </div>
                         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
                     </blockquote>
                 </div>
 
+                <h3 class="mx-auto mb-5 " id="saludo">Aqui tu saludo</h3>
+
+
                 <script>
 
                     function textoConCSS() {
-                        var select = "";
-                        var pos = "";
-                        select = document.getElementById('posicion');
-                        pos = select.options[select.selectedIndex].value;
-                        document.write("<h1 class='" + pos + "'>cola " + pos + "</h1>");
-                    }
+                        // Borramos los estilos anteriores
+                        document.getElementById('saludo').className = '';
 
-                    textoConCSS();
+                        // Comenzamos a obtener los datos del formulario
+                        var text = document.getElementById('nombre').value;
+                        
+                        var select;
+
+                        select = document.getElementById('color');
+                        var col = select.options[select.selectedIndex].value;
+                        var size = document.getElementById('size').value
+
+                        select = document.getElementById('fuente');
+                        var font = select.options[select.selectedIndex].value;
+                        select = document.getElementById('posicion');
+                        var pos = select.options[select.selectedIndex].value;
+
+                        // Aqui aplicamos los estilos
+                        var h1 = document.getElementById("saludo");
+                        h1.className +="mb-5 " + col + " " + font + " " + pos;
+                        h1.textContent = document.getElementById('nombre').value;
+                        
+                    }
 
                 </script>
 

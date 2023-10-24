@@ -20,7 +20,7 @@ function crearEncabezado() {
             row.appendChild(cell);
             cell.textContent = encabezados[j];
         }
-        table.appendChild(row);
+        table.appendChild(row); 
     }
     document.body.appendChild(table);
 }
